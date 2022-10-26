@@ -13,6 +13,7 @@
 		8FABC2272905FA5F00B56442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FABC2252905FA5F00B56442 /* Main.storyboard */; };
 		8FABC2292905FA6000B56442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FABC2282905FA6000B56442 /* Assets.xcassets */; };
 		8FABC22C2905FA6000B56442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FABC22A2905FA6000B56442 /* LaunchScreen.storyboard */; };
+		8FC5A41B2908BADF003F09D3 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5A41A2908BADF003F09D3 /* AddItemViewController.swift */; };
 		8FD8B78A290767CA00E36B52 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8B789290767CA00E36B52 /* ChecklistItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		8FABC2282905FA6000B56442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FABC22B2905FA6000B56442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FABC22D2905FA6000B56442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC5A41A2908BADF003F09D3 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		8FD8B789290767CA00E36B52 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				8FABC22A2905FA6000B56442 /* LaunchScreen.storyboard */,
 				8FABC22D2905FA6000B56442 /* Info.plist */,
 				8FD8B789290767CA00E36B52 /* ChecklistItem.swift */,
+				8FC5A41A2908BADF003F09D3 /* AddItemViewController.swift */,
 			);
 			path = checklist;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC5A41B2908BADF003F09D3 /* AddItemViewController.swift in Sources */,
 				8FABC2242905FA5F00B56442 /* ChecklistViewController.swift in Sources */,
 				8FABC2202905FA5F00B56442 /* AppDelegate.swift in Sources */,
 				8FABC2222905FA5F00B56442 /* SceneDelegate.swift in Sources */,

@@ -13,6 +13,8 @@ class ChecklistViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        
          let item1 = ChecklistItem()
          item1.text = "Walk the dog"
          items.append(item1)
@@ -31,17 +33,18 @@ class ChecklistViewController: UITableViewController {
          item5.text = "Eat ice cream"
          items.append(item5)
         
+        navigationController?.navigationBar.prefersLargeTitles = true;
     }
 
     //MARK: - TABLE VIEW Data Source
-    //creates the number of rows in the table view
+    //creates the number of rows in the table view - this method takes the number of rows from our model (the array instantiated above) and sends it to the view
     override func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return items.count
         }
     
-    //updates the cell in the table view to use the data at the corresponding row
+    //updates the cell in the table view to use the data at the corresponding row; also allows for cells to be reused.
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +58,7 @@ class ChecklistViewController: UITableViewController {
             return cell
         }
     
-    //MARK - Table View Delegate
+    //MARK: - Table View Delegate
     func configureCheckmark(
         for cell: UITableViewCell,
         with item: ChecklistItem){
@@ -66,6 +69,7 @@ class ChecklistViewController: UITableViewController {
             }
     }
     
+    //method that toggles the checkmark on or off when user taps
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath){
         if let cell = tableView.cellForRow(at: indexPath){
@@ -85,5 +89,27 @@ class ChecklistViewController: UITableViewController {
             let label = cell.viewWithTag(1000) as! UILabel
             label.text = item.text
         }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        commit edittingStyle: UITableViewCell.EditingStyle,
+        forRowAt indexPath: IndexPath){
+            items.remove(at: indexPath.row)
+            
+            let indexPathArray = [indexPath]
+            tableView.deleteRows(at: indexPathArray, with: .automatic)
+        }
+    
+    //MARK: - Actions
+    @IBAction func addItem(){
+        let newRowIndex = items.count
+        
+        let item = ChecklistItem()
+        item.text = "new row"
+        items.append(item)
+        let indexPath = IndexPath(row: newRowIndex, section: 0);
+        let indexPaths = [indexPath]
+        tableView.insertRows(at:indexPaths, with: .automatic)
+    }
 }
 
