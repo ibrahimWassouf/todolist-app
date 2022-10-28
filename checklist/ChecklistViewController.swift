@@ -7,35 +7,57 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
     var items = [ChecklistItem]()
+    
+    //MARK: - navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "AddItem"{
+            let controller = segue.destination as! AddItemViewController
+            controller.delegate = self
+        }
+    }
+    //MARK: - add item viewcontroller delegates
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+        let newRowIndex = items.count
+        items.append(item)
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPathsArray = [indexPath]
+        tableView.insertRows(at: indexPathsArray, with: .automatic)
+        navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
         
-         let item1 = ChecklistItem()
-         item1.text = "Walk the dog"
-         items.append(item1)
-         let item2 = ChecklistItem()
-         item2.text = "Brush my teeth"
-         item2.checked = true
-         items.append(item2)
-         let item3 = ChecklistItem()
-         item3.text = "Learn iOS development"
-         item3.checked = true
-         items.append(item3)
-         let item4 = ChecklistItem()
-         item4.text = "Soccer practice"
-         items.append(item4)
-         let item5 = ChecklistItem()
-         item5.text = "Eat ice cream"
-         items.append(item5)
+        
+        let item1 = ChecklistItem()
+        item1.text = "Walk the dog"
+        items.append(item1)
+        let item2 = ChecklistItem()
+        item2.text = "Brush my teeth"
+        item2.checked = true
+        items.append(item2)
+        let item3 = ChecklistItem()
+        item3.text = "Learn iOS development"
+        item3.checked = true
+        items.append(item3)
+        let item4 = ChecklistItem()
+        item4.text = "Soccer practice"
+        items.append(item4)
+        let item5 = ChecklistItem()
+        item5.text = "Eat ice cream"
+        items.append(item5)
         
         navigationController?.navigationBar.prefersLargeTitles = true;
     }
-
+    
     //MARK: - TABLE VIEW Data Source
     //creates the number of rows in the table view - this method takes the number of rows from our model (the array instantiated above) and sends it to the view
     override func tableView(
@@ -67,7 +89,7 @@ class ChecklistViewController: UITableViewController {
             } else {
                 cell.accessoryType = .none
             }
-    }
+        }
     
     //method that toggles the checkmark on or off when user taps
     override func tableView(_ tableView: UITableView,
@@ -76,7 +98,7 @@ class ChecklistViewController: UITableViewController {
             
             let item = items[indexPath.row]
             item.checked.toggle()
-
+            
             configureCheckmark(for: cell, with: item)
         }
         
@@ -99,17 +121,5 @@ class ChecklistViewController: UITableViewController {
             let indexPathArray = [indexPath]
             tableView.deleteRows(at: indexPathArray, with: .automatic)
         }
-    
-    //MARK: - Actions
-    @IBAction func addItem(){
-        let newRowIndex = items.count
-        
-        let item = ChecklistItem()
-        item.text = "new row"
-        items.append(item)
-        let indexPath = IndexPath(row: newRowIndex, section: 0);
-        let indexPaths = [indexPath]
-        tableView.insertRows(at:indexPaths, with: .automatic)
-    }
 }
 
