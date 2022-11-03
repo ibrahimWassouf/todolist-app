@@ -16,27 +16,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="cW5-lI-kjV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="cW5-lI-kjV">
                                 <rect key="frame" x="0.0" y="50" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cW5-lI-kjV" id="inj-ZQ-NbC">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="261.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXf-5F-2jR">
+                                            <rect key="frame" x="20" y="6" width="14" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GD-AK-9na">
-                                            <rect key="frame" x="21" y="11" width="259" height="21"/>
+                                            <rect key="frame" x="50" y="11" width="41.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9GD-AK-9na" firstAttribute="top" secondItem="inj-ZQ-NbC" secondAttribute="top" constant="11" id="Asv-lQ-odQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="9GD-AK-9na" secondAttribute="bottom" constant="11.5" id="TV7-4Z-4fL"/>
-                                        <constraint firstAttribute="trailing" secondItem="9GD-AK-9na" secondAttribute="trailing" id="Z5K-t8-oTa"/>
-                                        <constraint firstItem="9GD-AK-9na" firstAttribute="leading" secondItem="inj-ZQ-NbC" secondAttribute="leading" constant="21" id="aYB-Vd-WvW"/>
+                                        <constraint firstItem="9GD-AK-9na" firstAttribute="leading" secondItem="CXf-5F-2jR" secondAttribute="trailing" constant="16" id="6Nn-2c-Nfc"/>
+                                        <constraint firstItem="CXf-5F-2jR" firstAttribute="leading" secondItem="inj-ZQ-NbC" secondAttribute="leading" constant="20" id="Ecm-Km-116"/>
+                                        <constraint firstItem="9GD-AK-9na" firstAttribute="firstBaseline" secondItem="CXf-5F-2jR" secondAttribute="baseline" id="bBP-gF-FTe"/>
+                                        <constraint firstItem="9GD-AK-9na" firstAttribute="top" secondItem="inj-ZQ-NbC" secondAttribute="topMargin" id="oIT-OH-IDr"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="9GD-AK-9na" secondAttribute="trailing" id="pIf-cu-pam"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="FAn-lz-XWE" kind="show" identifier="EditItem" trigger="accessoryAction" id="r1t-Wd-bWe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -59,7 +69,7 @@
         <!--Add Item-->
         <scene sceneID="GSU-7d-OVB">
             <objects>
-                <tableViewController id="FAn-lz-XWE" customClass="AddItemViewController" customModule="checklist" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FAn-lz-XWE" customClass="ItemDetailViewController" customModule="checklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="QTK-ql-SSr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +154,9 @@
             <point key="canvasLocation" x="-189.375" y="-68.661971830985919"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="r1t-Wd-bWe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
