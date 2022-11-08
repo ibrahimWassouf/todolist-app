@@ -9,6 +9,7 @@ import UIKit
 
 class ChecklistViewController: UITableViewController, itemDetailViewControllerDelegate {
     var items = [ChecklistItem]()
+    var checklist: Checklist!
     
     //MARK: - navigation
     
@@ -57,8 +58,9 @@ class ChecklistViewController: UITableViewController, itemDetailViewControllerDe
         // Do any additional setup after loading the view.
         print("the document directory is: \(documentsDirectory())")
         print("file path is: \(dataFilePath())")
+        title = checklist.name
         
-        navigationController?.navigationBar.prefersLargeTitles = true;
+        navigationItem.largeTitleDisplayMode = .never
         loadChecklistItems()
     }
     
