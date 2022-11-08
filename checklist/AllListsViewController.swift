@@ -52,7 +52,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         cellForRowAt indexPath: IndexPath) ->
         UITableViewCell {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "ChecklistCell", for: indexPath)
-            var data = lists[indexPath.row]
+            let data = lists[indexPath.row]
             cell.textLabel!.text = data.name
             cell.accessoryType = .detailDisclosureButton
             
@@ -75,6 +75,18 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
             tableView.deleteRows(at: indexPaths, with: .automatic)
         }
     
+    override func tableView(
+        _ tableView: UITableView,
+        accessoryButtonTappedForRowWith indexPath: IndexPath) {
+            let controller = storyboard!.instantiateViewController(withIdentifier: "ListDetailViewController") as! ListDetailViewController
+            controller.delegate = self
+            
+            let checklist = lists[indexPath.row]
+            controller.checklistToEdit = checklist
+            
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    
     //MARK: - List Detail View Controller Delegates
     func listDetailViewControllerDidCancel(_ controller: ListDetailViewController) {
         navigationController?.popViewController(animated: true)
@@ -92,7 +104,7 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
     
     func listDetailViewController(
         _ controller: ListDetailViewController,
-        didFinishEditing checklist: Checklist) {
+        didFinishEditting checklist: Checklist) {
             if let index = lists.firstIndex(of: checklist){
                 let indexPath = IndexPath(row: index, section: 0)
                 if let cell = tableView.cellForRow(at: indexPath) {
