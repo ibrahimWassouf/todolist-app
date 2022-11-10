@@ -16,6 +16,7 @@
 		8FABC2272905FA5F00B56442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FABC2252905FA5F00B56442 /* Main.storyboard */; };
 		8FABC2292905FA6000B56442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FABC2282905FA6000B56442 /* Assets.xcassets */; };
 		8FABC22C2905FA6000B56442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FABC22A2905FA6000B56442 /* LaunchScreen.storyboard */; };
+		8FC1EEAC291C7A90003CF1CC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC1EEAB291C7A90003CF1CC /* DataModel.swift */; };
 		8FC5A41B2908BADF003F09D3 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5A41A2908BADF003F09D3 /* ItemDetailViewController.swift */; };
 		8FD8B78A290767CA00E36B52 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8B789290767CA00E36B52 /* ChecklistItem.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		8FABC2282905FA6000B56442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FABC22B2905FA6000B56442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FABC22D2905FA6000B56442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC1EEAB291C7A90003CF1CC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8FC5A41A2908BADF003F09D3 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		8FD8B789290767CA00E36B52 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				8F405A932919CCFD0070B8D1 /* AllListsViewController.swift */,
 				8F405A952919D7B20070B8D1 /* Checklist.swift */,
 				8F405A972919EA4E0070B8D1 /* ListDetailViewController.swift */,
+				8FC1EEAB291C7A90003CF1CC /* DataModel.swift */,
 			);
 			path = checklist;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				8FD8B78A290767CA00E36B52 /* ChecklistItem.swift in Sources */,
 				8F405A962919D7B20070B8D1 /* Checklist.swift in Sources */,
 				8F405A982919EA4E0070B8D1 /* ListDetailViewController.swift in Sources */,
+				8FC1EEAC291C7A90003CF1CC /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
