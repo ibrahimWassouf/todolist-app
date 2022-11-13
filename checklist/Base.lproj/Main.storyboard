@@ -26,7 +26,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXf-5F-2jR">
                                             <rect key="frame" x="20" y="6" width="14" height="26.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.46873568469999999" green="0.73850273840000003" blue="0.29758823610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GD-AK-9na">
@@ -64,7 +64,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u32-Qs-mLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1573" y="-750"/>
+            <point key="canvasLocation" x="1571.25" y="-750"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="GSU-7d-OVB">
@@ -252,6 +252,7 @@
         <segue reference="5xA-fh-adJ"/>
         <segue reference="r1t-Wd-bWe"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.46873568472147314" green="0.73850273840206193" blue="0.29758823612113933" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

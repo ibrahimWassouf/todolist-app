@@ -42,6 +42,12 @@ class DataModel {
         }
     }
     
+    func sortChecklist() {
+        lists.sort { list1, list2 in
+            return list1.name.localizedStandardCompare(list2.name) == .orderedAscending
+        }
+    }
+    
     //MARK: - Data Saving
     //function that returns the full path to the documents folder
     func documentsDirectory() -> URL {
@@ -78,6 +84,7 @@ class DataModel {
                 lists = try decoder.decode(
                     [Checklist].self,
                     from: data)
+                sortChecklist()
             } catch {
                 print("Error loading item array: \(error.localizedDescription)")
             }
