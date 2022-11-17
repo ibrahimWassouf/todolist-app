@@ -28,6 +28,8 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate {
             title = "Edit Checklist"
             textField.text = checklist.name
             doneBarButton.isEnabled = true
+            
+            
         }
         // Do any additional setup after loading the view.
     }
